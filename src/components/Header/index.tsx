@@ -6,7 +6,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <img src={logoImg} alt="" />
+        <img src={logoImg} alt="GitHub Blog logo" />
       </HeaderContent>
     </HeaderContainer>
   )
