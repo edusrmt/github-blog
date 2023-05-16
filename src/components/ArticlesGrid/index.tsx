@@ -12,7 +12,7 @@ export function ArticlesGrid() {
     <ArticlesGridContainer>
       {articles.map((article) => {
         return (
-          <ArticleContainer key={article.id}>
+          <ArticleContainer key={article.number} to={`posts/${article.number}`}>
             <Heading>
               <h3>{article.title}</h3>
               <span>{timeFromNow(article.created_at)}</span>

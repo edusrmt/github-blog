@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const ArticlesGridContainer = styled.section`
   margin-top: 3rem;
@@ -6,9 +7,14 @@ export const ArticlesGridContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `
 
-export const ArticleContainer = styled.a`
+export const ArticleContainer = styled(Link)`
   background: ${(props) => props.theme.post};
   padding: 2rem;
   border-radius: 10px;

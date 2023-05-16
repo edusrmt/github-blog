@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { Link } from 'react-router-dom'
 
-export const ProfileContainer = styled.section`
+export const PostHeaderContainer = styled.section`
   background: ${(props) => props.theme.profile};
   padding: 2rem 2.5rem;
   margin-top: -5.5rem;
@@ -8,6 +9,11 @@ export const ProfileContainer = styled.section`
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
 
   display: flex;
+  flex-direction: column;
+
+  h1 {
+    color: ${(props) => props.theme.title};
+  }
 
   img {
     width: 148px;
@@ -18,25 +24,15 @@ export const ProfileContainer = styled.section`
   }
 `
 
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-
-  p {
-    flex: 1;
-  }
-`
-
-export const Heading = styled.div`
+export const Navigation = styled.div`
   color: ${(props) => props.theme.white};
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
 
   display: flex;
   justify-content: space-between;
 `
 
-export const GitHubLink = styled.a`
+const linkStyle = css`
   font-size: 0.75rem;
   font-weight: bold;
   text-decoration: none;
@@ -51,14 +47,22 @@ export const GitHubLink = styled.a`
   }
 `
 
+export const NavigationLink = styled(Link)`
+  ${linkStyle}
+`
+
+export const NavigationAnchor = styled.a`
+  ${linkStyle}
+`
+
 export const InfosContainer = styled.div`
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 `
 
 export const InfoItem = styled.div`
-  color: ${(props) => props.theme.subtitle};
+  color: ${(props) => props.theme.span};
 
   display: flex;
   align-items: center;

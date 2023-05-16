@@ -7,12 +7,14 @@ import {
 } from 'react'
 import { api } from '../lib/axios'
 
-interface Article {
-  id: number
+export interface Article {
   title: string
   created_at: string
   body: string
+  number: number
   html_url: string
+  user: { login: string }
+  comments: number
 }
 
 interface ArticlesContextType {
