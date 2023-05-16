@@ -20,7 +20,7 @@ import { api } from '../../lib/axios'
 
 export function Profile() {
   const [userData, setUserData] = useState({
-    avatar: '',
+    avatar_url: '',
     name: '',
     bio: '',
     login: '',

@@ -2,9 +2,6 @@ import styled from 'styled-components'
 
 export const ProfileContainer = styled.section`
   background: ${(props) => props.theme.profile};
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
   padding: 2rem 2.5rem;
   margin-top: -5.5rem;
   border-radius: 10px;

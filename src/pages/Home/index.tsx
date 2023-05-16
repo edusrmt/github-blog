@@ -1,11 +1,19 @@
+import { ArticlesGrid } from '../../components/ArticlesGrid'
 import { Header } from '../../components/Header'
 import { Profile } from '../../components/Profile'
+import { SearchForm } from '../../components/SearchForm'
+
+import { HomeContainer } from './styles'
 
 export function Home() {
   return (
-    <div>
+    <>
       <Header />
-      <Profile />
-    </div>
+      <HomeContainer>
+        <Profile />
+        <SearchForm />
+        <ArticlesGrid />
+      </HomeContainer>
+    </>
   )
 }
