@@ -20,6 +20,7 @@ export interface Article {
 interface ArticlesContextType {
   articles: Article[]
   articlesCount: number
+  fetchArticles: (query?: string) => Promise<void>
 }
 
 interface ArticlesProviderProps {
@@ -46,7 +47,9 @@ export function ArticlesProvider({ children }: ArticlesProviderProps) {
   }, [fetchArticles])
 
   return (
-    <ArticlesContext.Provider value={{ articles, articlesCount }}>
+    <ArticlesContext.Provider
+      value={{ articles, articlesCount, fetchArticles }}
+    >
       {children}
     </ArticlesContext.Provider>
   )
