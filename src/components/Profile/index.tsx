@@ -30,9 +30,7 @@ export function Profile() {
 
   async function fetchProfile() {
     const response = await api.get('users/edusrmt')
-
     const { avatar_url, name, bio, login, company, followers } = response.data
-    console.log(response.data)
 
     setUserData({
       avatar_url,

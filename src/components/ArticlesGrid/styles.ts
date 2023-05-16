@@ -8,17 +8,30 @@ export const ArticlesGridContainer = styled.section`
   gap: 2rem;
 `
 
-export const ArticleContainer = styled.article`
+export const ArticleContainer = styled.a`
   background: ${(props) => props.theme.post};
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 `
 
 export const Heading = styled.div`
+  margin-bottom: 1.25rem;
+
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  gap: 1rem;
 
   h3 {
     color: ${(props) => props.theme.title};

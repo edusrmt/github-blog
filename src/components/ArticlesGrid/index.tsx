@@ -1,56 +1,27 @@
+import { useContext } from 'react'
+
+import { ArticlesContext } from '../../contexts/ArticlesContext'
+import { timeFromNow } from '../../utils/formatter'
+
 import { ArticlesGridContainer, ArticleContainer, Heading } from './styles'
 
 export function ArticlesGrid() {
+  const { articles } = useContext(ArticlesContext)
+
   return (
     <ArticlesGridContainer>
-      <ArticleContainer>
-        <Heading>
-          <h3>JavaScript data types, data structures, and algorithms</h3>
-          <span>Há 1 dia</span>
-        </Heading>
+      {articles.map((article) => {
+        return (
+          <ArticleContainer key={article.id}>
+            <Heading>
+              <h3>{article.title}</h3>
+              <span>{timeFromNow(article.created_at)}</span>
+            </Heading>
 
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in...
-        </p>
-      </ArticleContainer>
-      <ArticleContainer>
-        <Heading>
-          <h3>JavaScript data types and data structures</h3>
-          <span>Há 1 dia</span>
-        </Heading>
-
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in...
-        </p>
-      </ArticleContainer>
-      <ArticleContainer>
-        <Heading>
-          <h3>JavaScript data types and data structures</h3>
-          <span>Há 1 dia</span>
-        </Heading>
-
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in...
-        </p>
-      </ArticleContainer>
-      <ArticleContainer>
-        <Heading>
-          <h3>JavaScript data types, data structures, and algorithms</h3>
-          <span>Há 1 dia</span>
-        </Heading>
-
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in...
-        </p>
-      </ArticleContainer>
+            <p>{article.body}</p>
+          </ArticleContainer>
+        )
+      })}
     </ArticlesGridContainer>
   )
 }
